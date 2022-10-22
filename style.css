@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #eceff1;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    width: 35%;
+    margin-inline: auto;
+    position: relative;
+}
+
+ul::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    translate: 0 -50%;
+    width: 100%;
+    height: 3px;
+    background-color: #bdbdbd;
+    z-index: -2;
+}
+
+ul .progress {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    translate: 0 -50%;
+    width: 0;
+    height: 3px;
+    background-color: #1e88e5;
+    z-index: -1;
+}
+
+ul li {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid #bdbdbd;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.buttons {
+    width: 20%;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+button {
+    padding: 6px 25px;
+    font-size: 18px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #1e88e5;
+}
+
+ul li.active {
+    border-color: #1e88e5;
+}
+
+button:disabled {
+    background-color: grey;
+}
+
+@media (max-width: 767px) {
+    ul {
+        width: 100%;
+        height: 35%;
+        flex-direction: column;
+    }
+
+    ul::after {
+        top: 0;
+        left: 50%;
+        translate: -50% 0;
+        width: 3px;
+        height: 100%;
+    }
+
+    ul .progress {
+        top: 0;
+        left: 50%;
+        translate: -50% 0;
+        width: 3px;
+        height: 0;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
